@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AssertBits LLC | Custom software development in Miami, Florida</title>
+<meta name="description" content="AssertBits LLC is a small software development and consulting company in Miami, Florida. We build custom web applications, systems integrations and AI-assisted applications for businesses and government agencies.">
+<link rel="canonical" href="https://assertbits.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f6f8f7;
+    --panel: #ffffff;
+    --lagoon: #0e3a3f;
+    --slate: #33474a;
+    --mist: #d5e0de;
+    --mango: #f2b134;
+    --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+    --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    --measure: 38rem;
+    --gutter: clamp(1.25rem, 5vw, 4rem);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--slate);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  a {
+    color: var(--lagoon);
+    text-decoration-color: var(--mango);
+    text-decoration-thickness: 0.14em;
+    text-underline-offset: 0.2em;
+  }
+  a:hover { text-decoration-color: var(--lagoon); }
+  a:focus-visible, .skip:focus-visible {
+    outline: 3px solid var(--mango);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .skip {
+    position: absolute;
+    left: -100vw;
+    top: 0.5rem;
+    background: var(--panel);
+    padding: 0.5rem 0.75rem;
+  }
+  .skip:focus { left: 0.5rem; }
+
+  .wrap {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  /* Masthead */
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+  .wordmark {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.375rem;
+    letter-spacing: -0.01em;
+    color: var(--lagoon);
+    text-decoration: none;
+  }
+  .wordmark span { color: var(--slate); font-weight: 500; }
+  .masthead nav a { font-weight: 500; }
+
+  /* Opening */
+  .opening {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+    padding-top: clamp(2rem, 6vw, 5rem);
+    padding-bottom: clamp(3rem, 7vw, 6rem);
+  }
+  h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(2.25rem, 5.6vw, 4.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    color: var(--lagoon);
+    margin: 0 0 1.5rem;
+    max-width: 14em;
+    text-wrap: balance;
+  }
+  .lead {
+    font-size: clamp(1.125rem, 1.6vw, 1.3125rem);
+    line-height: 1.55;
+    max-width: var(--measure);
+    margin: 0;
+  }
+
+  /* Company record */
+  .record {
+    background: var(--panel);
+    border-left: 6px solid var(--mango);
+    padding: 1.5rem 1.5rem 1.25rem;
+    align-self: start;
+  }
+  .record h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--lagoon);
+    margin: 0 0 0.75rem;
+  }
+  .record dl { margin: 0; }
+  .record div {
+    display: grid;
+    grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
+    gap: 0.25rem 1rem;
+    padding: 0.6rem 0;
+    border-top: 1px solid var(--mist);
+  }
+  .record dt { font-size: 0.9375rem; }
+  .record dd {
+    margin: 0;
+    color: var(--lagoon);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+  }
+
+  /* Sections */
+  section { padding: clamp(2.5rem, 6vw, 4.5rem) 0; border-top: 1px solid var(--mist); }
+  h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.625rem, 3vw, 2.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--lagoon);
+    margin: 0 0 1.75rem;
+  }
+  h3 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    color: var(--lagoon);
+    margin: 0 0 0.5rem;
+  }
+  p { margin: 0 0 1rem; max-width: var(--measure); }
+  p:last-child { margin-bottom: 0; }
+
+  .work {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem 3rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .work li { max-width: var(--measure); }
+
+  .about {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem 4rem;
+  }
+
+  table {
+    width: 100%;
+    max-width: 46rem;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+  }
+  caption {
+    text-align: left;
+    padding-bottom: 0.75rem;
+    max-width: var(--measure);
+  }
+  th, td {
+    text-align: left;
+    padding: 0.7rem 1rem 0.7rem 0;
+    border-top: 1px solid var(--mist);
+    vertical-align: top;
+  }
+  thead th { font-weight: 600; color: var(--lagoon); border-top: 0; }
+  tbody th { font-weight: 600; color: var(--lagoon); white-space: nowrap; }
+  .primary { font-size: 0.875rem; font-weight: 500; color: var(--slate); }
+
+  .contact a {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 4.2vw, 2.75rem);
+    letter-spacing: -0.015em;
+    overflow-wrap: anywhere;
+  }
+
+  footer {
+    border-top: 1px solid var(--mist);
+    padding: 1.75rem 0 2.5rem;
+    font-size: 0.9375rem;
+  }
+  footer p { max-width: none; }
+
+  @media (min-width: 56rem) {
+    .opening { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 4rem; }
+    .work { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .about { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+  }
+  @media (max-width: 26rem) {
+    .record div { grid-template-columns: minmax(0, 1fr); }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="wrap masthead">
+  <a class="wordmark" href="/">AssertBits <span>LLC</span></a>
+  <nav aria-label="Primary"><a href="#contact">Contact</a></nav>
+</header>
+
+<main id="main">
+  <div class="wrap opening">
+    <div>
+      <h1>AssertBits builds custom software for businesses and government agencies.</h1>
+      <p class="lead">We are a small software development and consulting company in Miami, Florida. We design, build and maintain web applications, connect them to the systems you already use, and add AI where it saves real work.</p>
+    </div>
+
+    <aside class="record" aria-labelledby="record-title">
+      <h2 id="record-title">Company record</h2>
+      <dl>
+        <div><dt>Legal name</dt><dd>AssertBits LLC</dd></div>
+        <div><dt>Formed</dt><dd>October 2024, Florida</dd></div>
+        <div><dt>Florida document number</dt><dd>L24000443354</dd></div>
+        <div><dt>Unique Entity ID</dt><dd>QM6QU31TET55</dd></div>
+        <div><dt>Primary industry code</dt><dd>NAICS 541511</dd></div>
+        <div><dt>Location</dt><dd>Miami, Florida</dd></div>
+      </dl>
+    </aside>
+  </div>
+
+  <section aria-labelledby="work-title">
+    <div class="wrap">
+      <h2 id="work-title">What we build</h2>
+      <ul class="work">
+        <li>
+          <h3>Custom web applications</h3>
+          <p>Business platforms that many organizations and roles can share safely, with reporting, document handling and interfaces that work on a phone. We build mainly in Python and TypeScript.</p>
+        </li>
+        <li>
+          <h3>Systems integration</h3>
+          <p>Connections between your software and accounting, payment, vehicle-tracking and partner systems, whether they exchange data through an API or through files.</p>
+        </li>
+        <li>
+          <h3>AI-assisted applications</h3>
+          <p>Software that reads documents and extracts their data, classifies records, and answers questions using current language models, with a person reviewing the output where accuracy matters.</p>
+        </li>
+        <li>
+          <h3>English and Spanish products</h3>
+          <p>Applications designed from the first screen for people who work in English, Spanish or both, including other languages when a project needs them.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="about-title">
+    <div class="wrap about">
+      <div>
+        <h2 id="about-title">Who does the work</h2>
+        <p>AssertBits is owned and run by Raul Menendez, a software engineer based in Miami. He has designed and shipped a complete multi-organization logistics platform, including document reading with AI, accounting and payment integrations, and a mobile app for drivers.</p>
+        <p>Every engagement is led by the engineer who writes the code. You talk to the person building your software, and you receive tested, documented work that your own team can maintain.</p>
+      </div>
+      <div>
+        <h3>How an engagement runs</h3>
+        <p>We start with a short written scope and a fixed first milestone, so you see working software early. After that we deliver in small increments, each one reviewed with you before the next begins.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="gov-title">
+    <div class="wrap">
+      <h2 id="gov-title">For government buyers</h2>
+      <p>AssertBits LLC is a small business with a Unique Entity ID assigned in SAM.gov. Our SAM.gov entity registration is in progress.</p>
+      <table>
+        <caption>Industry and product codes we work under</caption>
+        <thead>
+          <tr><th scope="col">Code</th><th scope="col">Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">NAICS 541511 <span class="primary">(primary)</span></th><td>Custom computer programming services</td></tr>
+          <tr><th scope="row">NAICS 541512</th><td>Computer systems design services</td></tr>
+          <tr><th scope="row">NAICS 541519</th><td>Other computer related services</td></tr>
+          <tr><th scope="row">NAICS 541715</th><td>Research and development in the physical, engineering and life sciences</td></tr>
+          <tr><th scope="row">NAICS 518210</th><td>Computing infrastructure providers, data processing, web hosting and related services</td></tr>
+          <tr><th scope="row">PSC DA01</th><td>IT and telecom: business application and application development support services</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 id="contact-title">Contact</h2>
+      <p>Tell us what you need built. We reply within two business days.</p>
+      <p><a href="mailto:owner@assertbits.com">owner@assertbits.com</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 AssertBits LLC, Miami, Florida.</p>
+  </div>
+</footer>
+</body>
+</html>
